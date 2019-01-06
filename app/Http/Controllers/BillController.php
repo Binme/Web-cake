@@ -61,10 +61,10 @@ class BillController extends Controller
         }
         Cart::destroy();
         $data = ['bill' => $bill];
-        Mail::send('page.mails.blank',$data,function($msg) {
-            $msg->from('thanhungdn92@gmail.com', 'Sweet Bakery Store');
-            $msg->to(Auth::user()->email, Auth::user()->name)->subject('Thông tin đặt hàng của bạn');
-        });
+        // Mail::send('page.mails.blank',$data,function($msg) {
+        //     $msg->from('thanhungdn92@gmail.com', 'Sweet Bakery Store');
+        //     $msg->to(Auth::user()->email, Auth::user()->name)->subject('Thông tin đặt hàng của bạn');
+        // });
         return redirect('index')->with('flash_message', 'Đặt hàng thành công!');    
     }
 

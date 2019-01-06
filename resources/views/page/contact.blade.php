@@ -15,19 +15,19 @@
 					<div class="space20">&nbsp;</div>
 					<p>Sweet Bakery được sản xuất trên dây chuyền hiện đại, với những nguyên liệu được nhập khẩu trực tiếp từ các nước có truyền thống làm bánh lâu đời trên thế giới. Thực khách tới đây có thể thưởng thức rất nhiều loại bánh : Bánh Sinh Nhật, Bánh Cưới, Bánh Valentine, Bánh Giáng sinh… Barkery, Bánh mỳ Pháp, Pizza, Hotdog, Patechaux, Cookies</p>
 					<div class="space20">&nbsp;</div>
-					<form action="index"  class="contact-form">
+					<form action="{{ url('/contact/post') }}" method="GET"  class="contact-form">
 					
 						<div class="form-group">
-							<input name="your-name" type="text" placeholder="Tên của bạn" class="form-control">
+							<input name="name" type="text" placeholder="Tên của bạn" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<input name="your-email" type="email" placeholder="Email của bạn" class="form-control">
+							<input name="email" type="email" placeholder="Email của bạn" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<input name="your-subject" type="text" placeholder="Địa chỉ" class="form-control">
+							<input name="address" type="text" placeholder="Địa chỉ" class="form-control" required>
 						</div>
 						<div class="form-group">
-							<textarea name="your-message" placeholder="Nội dung muốn nhắn gửi" class="form-control"></textarea>
+							<textarea name="message" placeholder="Nội dung muốn nhắn gửi" class="form-control" required></textarea>
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-warning">Gửi tin nhắn <i class="fa fa-chevron-right"></i></button>

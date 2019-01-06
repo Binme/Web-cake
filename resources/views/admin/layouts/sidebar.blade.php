@@ -33,6 +33,12 @@
                 </a>
             </li>
             <li>
+                <a href="{{route('admin.contact.index')}}">
+                    <i class="fa fa-phone"></i> <span>Contact</span>
+                    <span class="pull-right-container"></span>
+                </a>
+            </li>
+            <li>
                 <a href="{{route('admin.product.index')}}">
                     <i class="fa fa-heartbeat"></i> <span>Product</span>
                 </a>

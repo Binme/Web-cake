@@ -118,6 +118,22 @@ Route::group(['prefix' => 'admin','middleware'=>'isAdmin'], function () {
         Route::delete('/delete/{id}', 'Admin\CategoryController@destroy')->name('admin.category.destroy');
     });
 
+    Route::group(['prefix' => 'contact'], function() {
+    	// Api get bill
+        Route::get('api/contact', 'Admin\ContactController@apiContact')->name('api.contact');
+
+        // Show list product
+        Route::get('/', 'Admin\ContactController@index')->name('admin.contact.index');
+
+        // Update contact
+        Route::get('/update/{id}', 'Admin\ContactController@edit')->name('admin.contact.edit');
+        Route::patch('/update/{id}', 'Admin\ContactController@update')->name('admin.contact.update');
+
+        // Delete contact
+        Route::delete('/delete/{id}', 'Admin\ContactController@destroy')->name('admin.contact.destroy');
+
+    });
+
     Route::get('/calendar','Admin\EventController@calendar');
 
     Route::post('/calendar/add','Admin\EventController@addEvent');
@@ -280,6 +296,8 @@ Route::group(['prefix' => 'cart'],function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/contact/post','ContactController@index');
 
 Route::get('comment/delete/{id}',
 	['as' => 'delete-comment',
